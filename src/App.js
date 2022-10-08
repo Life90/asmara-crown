@@ -1,28 +1,22 @@
 import { Routes, Route } from "react-router-dom";
+
 import Home from "./routes/home/home.component";
 import Navigation from "./routes/navigation/navigation.component";
-import React from "react";
-import SignIn from "./routes/sign-in/sign-in.component";
+import Authentication from "./routes/authentication/authentication.component";
 
 const Shop = () => {
-  return (
-    <div>
-      <h1>I am the Shop page</h1>
-    </div>
-  );
+  return <h1>I am the shop page</h1>;
 };
 
 const App = () => {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Navigation />}>
-          <Route index element={<Home />} />
-          <Route path="Shop" element={<Shop />} />
-          <Route path="Sign-in" element={<SignIn />} />
-        </Route>
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="shop" element={<Shop />} />
+        <Route path="auth" element={<Authentication />} />
+      </Route>
+    </Routes>
   );
 };
 
